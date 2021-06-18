@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="kontejner" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="650.0" prefWidth="650.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacman.FXMLDocumentController">
+    <children>
+        <Label fx:id="Lscore" layoutX="56.0" layoutY="611.0" minHeight="16" minWidth="69" prefHeight="25.0" prefWidth="139.0" text="SCORE:" textFill="WHITE" />
+      <ImageView fx:id="imgLife1" fitHeight="25.0" fitWidth="25.0" layoutX="360.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('file:pacmanLife.png');" visible="false" />
+      <ImageView fx:id="imgLife2" fitHeight="25.0" fitWidth="25.0" layoutX="390.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('file:pacmanLife.png');" visible="false" />
+      <ImageView fx:id="imgLife3" fitHeight="25.0" fitWidth="25.0" layoutX="420.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('file:pacmanLife.png');" visible="false" />
+      <ImageView fx:id="imgLife4" fitHeight="25.0" fitWidth="25.0" layoutX="450.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('file:pacmanLife.png');" visible="false" />
+      <ImageView fx:id="imgLife5" fitHeight="25.0" fitWidth="25.0" layoutX="480.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('file:pacmanLife.png');" visible="false" />
+      <AnchorPane fx:id="go_pane" prefHeight="650.0" prefWidth="650.0" visible="false">
+         <children>
+            <Rectangle arcHeight="80.0" arcWidth="80.0" height="320.0" layoutX="65.0" layoutY="134.0" stroke="BLUE" strokeType="INSIDE" width="520.0" />
+            <Label alignment="CENTER" layoutX="129.0" layoutY="168.0" prefHeight="89.0" prefWidth="402.0" text="GAME OVER" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="55.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="129.0" layoutY="168.0" prefHeight="89.0" prefWidth="402.0" text="GAME OVER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="53.0" />
+               </font>
+            </Label>
+            <Separator layoutX="230.0" layoutY="256.0" prefWidth="200.0" />
+            <Label layoutX="115.0" layoutY="277.0" prefHeight="19.0" prefWidth="74.0" text="Final score:" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="go_score" layoutX="182.0" layoutY="278.0" prefHeight="17.0" prefWidth="62.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="299.0" layoutY="411.0" mnemonicParsing="false" onAction="#restart" text="Restart" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menu" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Rectangle arcHeight="30.0" arcWidth="30.0" height="446.0" layoutX="134.0" layoutY="114.0" stroke="BLUE" strokeType="INSIDE" width="364.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="233.0" layoutY="130.0" prefHeight="57.0" prefWidth="166.0" text="MENU" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="156.0" layoutY="200.0" prefHeight="31.0" prefWidth="62.0" text="Audio:" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sliderVolume" layoutX="182.0" layoutY="265.0" />
+            <Label layoutX="179.0" layoutY="239.0" text="Music volume" textFill="WHITE" />
+            <Separator layoutX="219.0" layoutY="199.0" prefWidth="200.0" />
+            <CheckBox fx:id="chkbxMute" layoutX="350.0" layoutY="264.0" mnemonicParsing="false" onAction="#mute" text="Mute" textFill="WHITE" />
+            <Label fx:id="labelVolume" layoutX="241.0" layoutY="281.0" text="0%" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="vt_pane" layoutX="10.0" layoutY="10.0" prefHeight="650.0" prefWidth="650.0" visible="false">
+         <children>
+            <Rectangle arcHeight="80.0" arcWidth="80.0" height="320.0" layoutX="65.0" layoutY="134.0" stroke="BLUE" strokeType="INSIDE" width="520.0" />
+            <Label alignment="CENTER" layoutX="129.0" layoutY="168.0" prefHeight="89.0" prefWidth="402.0" text="VICTORY" textFill="#ae9100">
+               <font>
+                  <Font name="System Bold" size="56.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="129.0" layoutY="168.0" prefHeight="89.0" prefWidth="402.0" text="VICTORY" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="53.0" />
+               </font>
+            </Label>
+            <Separator layoutX="230.0" layoutY="256.0" prefWidth="200.0" />
+            <Label layoutX="115.0" layoutY="277.0" prefHeight="19.0" prefWidth="74.0" text="Final score:" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="vt_score" layoutX="182.0" layoutY="278.0" prefHeight="17.0" prefWidth="62.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="299.0" layoutY="411.0" mnemonicParsing="false" onAction="#restart" text="Restart" />
+            <Label layoutX="115.0" layoutY="296.0" prefHeight="19.0" prefWidth="74.0" text="Lifes left:" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="vt_lifes" layoutX="170.0" layoutY="296.0" prefHeight="19.0" prefWidth="74.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
