@@ -149,6 +149,8 @@ public class FXMLDocumentController implements Initializable {
     		toggleMenu();
     	
     	pacman.jed(event);
+
+		kontejner.requestFocus();
     	
     }
     
@@ -159,18 +161,24 @@ public class FXMLDocumentController implements Initializable {
     	if(menu.isVisible()) 
     		pause();
     	else unpause();
+
+		kontejner.requestFocus();
     }
     
     public void pause() {
     	pacman.pause();
 		for(Duch duch : duchove)
 			duch.pause();
+
+		kontejner.requestFocus();
     }
     
     public void unpause() {
     	pacman.unpause();
 		for(Duch duch : duchove)
 			duch.unpause();
+
+		kontejner.requestFocus();
     }
     
     public void stop(){
@@ -228,7 +236,7 @@ public class FXMLDocumentController implements Initializable {
         };
         
         timer.schedule(task, 0,10);
-
+		kontejner.requestFocus();
 
         
     }
